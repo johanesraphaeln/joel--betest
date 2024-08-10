@@ -11,6 +11,9 @@ const {
 const validate = require('./middlewares/validate-schema');
 const createUserSchema = require('./validations/create-user');
 const updateUserSchema = require('./validations/update-user');
+const authenticateUserServiceRequest = require('./middlewares/authenticate');
+
+router.use(authenticateUserServiceRequest);
 
 router.post('/', validate(createUserSchema), async (req, res, next) => {
   try {

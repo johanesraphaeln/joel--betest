@@ -2,7 +2,6 @@
   "name": "ms-joel-betest",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "commonjs",
   "scripts": {
     "start:dev": "nodemon --env-file=.env src/index.js"
   },
@@ -10,16 +9,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.7.3",
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.1",
     "express": "^4.19.2",
     "http-status-codes": "^2.3.0",
     "joi": "^17.13.3",
-    "mongodb": "^6.8.0",
-    "mongoose": "^8.5.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "jsonwebtoken": "^9.0.2"
   }
 }
