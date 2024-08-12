@@ -10,6 +10,10 @@ const v1 = `/api/v1/users`;
 const notFoundMiddleware = require('./middlewares/not-found');
 const errorHandlerMiddleware = require('./middlewares/handle-error');
 
+app.get(v1, (req, res) => {
+  res.send('Welcome to Users Service API');
+});
+
 app.use(v1, usersRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

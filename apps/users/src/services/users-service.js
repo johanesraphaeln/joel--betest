@@ -1,14 +1,28 @@
 const User = require('../db/models/User');
 const { BadRequestError, NotFoundError } = require('../errors');
+const redisClient = require('./redis');
 
-const getUserByAccountNumber = async (accountNumber) => {
-  const user = await User.findOne({ accountNumber });
+const getUserFromCacheOrDb = async (key, query) => {
+  const cachedUser = await redisClient.get(key);
+  if (cachedUser) {
+    return JSON.parse(cachedUser);
+  }
+
+  const user = await User.findOne(query);
+  if (user) {
+    await redisClient.set(key, JSON.stringify(user));
+  }
   return user;
 };
 
+const getUserByAccountNumber = async (accountNumber) => {
+  const key = `user:accountNumber:${accountNumber}`;
+  return await getUserFromCacheOrDb(key, { accountNumber });
+};
+
 const getUserByIdentityNumber = async (identityNumber) => {
-  const user = await User.findOne({ identityNumber });
-  return user;
+  const key = `user:identityNumber:${identityNumber}`;
+  return await getUserFromCacheOrDb(key, { identityNumber });
 };
 
 const createUser = async (
