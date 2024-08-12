@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "6c8f7103-c578-45d2-8287-7dec47e815db",
+		"name": "joel-betest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24624586"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Generate JWT Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/jwt/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"jwt",
+								"generate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/v1/auth/jwt/generate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"jwt",
+										"generate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "242"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f2-HHXhwRkIlpe4r/GWXf3L5j5041c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 18:54:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"msg\": \"OK\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1zLWpvZWwtYmV0ZXN0IiwiYWRtaW4iOnRydWUsImlhdCI6MTcyMzMxNjA5NywiZXhwIjoxNzIzMzE2MTU3fQ.WOk0UV-gwRTVRiDdcVeQ5aJ9PkC04S0gWiClPzJLBoo\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Authenticate JWT Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1zLWpvZWwtYmV0ZXN0IiwiYWRtaW4iOnRydWUsImlhdCI6MTcyMzMxNDQ4MywiZXhwIjoxNzIzMzE0NTQzfQ.ZFthwfhwsIjGCqzIgu2xZuk0mQCmx4IsKx37042FA9w\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/jwt/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"jwt",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User by Account Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1zLWpvZWwtYmV0ZXN0IiwiYWRtaW4iOnRydWUsImlhdCI6MTcyMzMxNjAzMCwiZXhwIjoxNzIzMzE2MDkwfQ.zHwYpjNMzgZ7BSNglcx8dKwl4IH4fU04ga9D2MPKLXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/account/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"account",
+								"123"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User by Account Number",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/account/123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"account",
+										"123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-0oeCjuzyt4dnLpzf4FsbaMhesMw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 18:53:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"msg\": \"OK\",\n    \"data\": {\n        \"_id\": \"66b7b728777b694c51f5eae3\",\n        \"userName\": \"joel\",\n        \"accountNumber\": \"123\",\n        \"emailAddress\": \"joel@gmail.com\",\n        \"identityNumber\": \"321\",\n        \"createdAt\": \"2024-08-10T18:53:28.116Z\",\n        \"updatedAt\": \"2024-08-10T18:53:28.116Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User by Identity Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1zLWpvZWwtYmV0ZXN0IiwiYWRtaW4iOnRydWUsImlhdCI6MTcyMzMxNjAzMCwiZXhwIjoxNzIzMzE2MDkwfQ.zHwYpjNMzgZ7BSNglcx8dKwl4IH4fU04ga9D2MPKLXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/identity/321",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"identity",
+								"321"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User by Identity Number",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/identity/321",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"identity",
+										"321"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-0oeCjuzyt4dnLpzf4FsbaMhesMw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 18:54:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"msg\": \"OK\",\n    \"data\": {\n        \"_id\": \"66b7b728777b694c51f5eae3\",\n        \"userName\": \"joel\",\n        \"accountNumber\": \"123\",\n        \"emailAddress\": \"joel@gmail.com\",\n        \"identityNumber\": \"321\",\n        \"createdAt\": \"2024-08-10T18:53:28.116Z\",\n        \"updatedAt\": \"2024-08-10T18:53:28.116Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1zLWpvZWwtYmV0ZXN0IiwiYWRtaW4iOnRydWUsImlhdCI6MTcyMzMxNTk1OSwiZXhwIjoxNzIzMzE2MDE5fQ.e3mapedyFFx5R9VZuLU4HMXw7D4-xAYGADHSJmcG7XM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"joel\",\r\n    \"accountNumber\": \"123\",\r\n    \"emailAddress\": \"joel@gmail.com\",\r\n    \"identityNumber\": \"321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"joel\",\r\n    \"accountNumber\": \"123\",\r\n    \"emailAddress\": \"joel@gmail.com\",\r\n    \"identityNumber\": \"321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-SVaShky6Dame+xhaGxSHG0cTR9A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 18:53:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"msg\": \"CREATED\",\n    \"data\": {\n        \"userName\": \"joel\",\n        \"accountNumber\": \"123\",\n        \"emailAddress\": \"joel@gmail.com\",\n        \"identityNumber\": \"321\",\n        \"_id\": \"66b7b728777b694c51f5eae3\",\n        \"createdAt\": \"2024-08-10T18:53:28.116Z\",\n        \"updatedAt\": \"2024-08-10T18:53:28.116Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1zLWpvZWwtYmV0ZXN0IiwiYWRtaW4iOnRydWUsImlhdCI6MTcyMzMxNjAzMCwiZXhwIjoxNzIzMzE2MDkwfQ.zHwYpjNMzgZ7BSNglcx8dKwl4IH4fU04ga9D2MPKLXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailAddress\": \"johanesraphael@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/66b7b728777b694c51f5eae3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"66b7b728777b694c51f5eae3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emailAddress\": \"johanesraphael@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/66b7b728777b694c51f5eae3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"66b7b728777b694c51f5eae3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-oDrdWFylRYZwv6lE059LaiNiJTY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 18:55:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"msg\": \"OK\",\n    \"data\": {\n        \"_id\": \"66b7b728777b694c51f5eae3\",\n        \"userName\": \"joel\",\n        \"accountNumber\": \"123\",\n        \"emailAddress\": \"johanesraphael@gmail.com\",\n        \"identityNumber\": \"321\",\n        \"createdAt\": \"2024-08-10T18:53:28.116Z\",\n        \"updatedAt\": \"2024-08-10T18:55:03.209Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
